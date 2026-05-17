@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Users | InventoryPro</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div id="mainApp">
+  <header>
+    <div class="logo">Inventory<span>Pro</span></div>
+    <nav>
+      <a href="/dashboard.html">Dashboard</a>
+      <a href="/inventory.html">Inventory</a>
+      <a href="/stock.html">Stock Ops</a>
+      <a href="/locations.html">Locations</a>
+      <a href="/reports.html">Reports</a>
+      <a href="/users.html">Users</a>
+      <a href="/profile.html" style="color:#ffd700;">Profile</a>
+      <a href="/logout" style="color:#ff4757">Logout</a>
+    </nav>
+  </header>
+
+  <section class="section users" id="usersSection">
+    <div class="panel">
+      <h2>User Management</h2>
+      <p class="muted">Admin-only section</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Owner Name</th><th>Shop Name</th><th>Email</th><th>Username</th><th>User ID</th><th>Role</th><th>Join Date</th></tr>
+          </thead>
+          <tbody id="usersTable"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <footer><p>© 2026 InventoryPro</p></footer>
+</div>
+<script src="common.js"></script>
+<script src="js/users.js"></script>
+</body>
+</html>

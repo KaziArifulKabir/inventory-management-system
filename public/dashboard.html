@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard | InventoryPro</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div id="mainApp">
+  <header>
+    <div class="logo">Inventory<span>Pro</span></div>
+    <nav>
+      <a href="/dashboard.html">Dashboard</a>
+      <a href="/inventory.html">Inventory <span id="lowStockBadge" style="background:red; color:white; padding:2px 8px; border-radius:12px; font-size:12px; display:none;">0</span></a>
+      <a href="/stock.html">Stock Ops</a>
+      <a href="/locations.html">Locations</a>
+      <a href="/reports.html">Reports</a>
+      <a href="/users.html">Users</a>
+      <a href="/profile.html" style="color:#ffd700;">Profile</a>
+      <a href="/logout" style="color:#ff4757">Logout</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h3 style="color:#00bcd4; margin-bottom:10px;">Welcome back, <span id="greetingUser">User</span>! 👋</h3>
+      <h1>Web-Based Inventory Management System</h1>
+      <p>Manage inventory, locations, users, transactions and reports from one place.</p>
+      <button onclick="location.href='/inventory.html'">Get Started</button>
+      <button class="btn-primary" onclick="toggleModal('addItemModal')" style="margin-left:10px;">+ Add Item</button>
+    </div>
+  </section>
+
+  <section class="section" id="dashboard">
+    <h2>Dashboard</h2>
+    <div class="dashboard">
+      <div class="card"><h2 id="totalItems">0</h2><p>Total Items</p></div>
+      <div class="card"><h2 id="totalStock">0</h2><p>Total Stock</p></div>
+      <div class="card"><h2 id="inventoryValue">$0</h2><p>Total Inventory Value</p></div>
+      <div class="card danger"><h2 id="lowStockCount">0</h2><p>Low Stock Items</p></div>
+      <div class="card"><h2 id="transactionCount">0</h2><p>Transactions</p></div>
+    </div>
+  </section>
+
+  <section class="section categories">
+    <h2>Product Categories</h2>
+    <div class="category-box">
+      <div onclick="location.href='/inventory.html?category=Electronics'">Electronics</div>
+      <div onclick="location.href='/inventory.html?category=Clothing'">Clothing</div>
+      <div onclick="location.href='/inventory.html?category=Hardware'">Hardware</div>
+      <div onclick="location.href='/inventory.html?category=Food'">Food</div>
+      <div onclick="location.href='/inventory.html?category=Sports'">Sports</div>
+      <div onclick="location.href='/inventory.html?category=Toys'">Toys</div>
+    </div>
+  </section>
+
+  <section class="section recent">
+    <h2>Recent Activity</h2>
+    <ul id="recentActivity"></ul>
+  </section>
+
+  <section class="section features">
+    <h2>Key Features</h2>
+    <div class="feature-box">
+      <div>Real-Time Tracking</div><div>Role-Based Access</div><div>Stock Transfers</div>
+      <div>Reports & Alerts</div><div>Multi-Location Support</div><div>Transaction History</div>
+    </div>
+  </section>
+
+  <footer><p>© 2026 Web-Based Inventory Management System | All Rights Reserved</p></footer>
+</div>
+
+<div id="addItemModal" class="modal">
+  <div class="modal-card">
+    <h3>Add New Item</h3>
+    <input type="text" id="pName" placeholder="Item Name" />
+    <input type="text" id="pSku" placeholder="SKU (unique)" />
+    <input type="number" id="pPrice" placeholder="Unit Price" />
+    <input type="number" id="pStock" placeholder="Initial Stock" />
+    <input type="number" id="pReorder" placeholder="Reorder Level" />
+    <input type="file" id="pImgFile" accept="image/*" />
+    <select id="pCategory">
+      <option value="Electronics">Electronics</option>
+      <option value="Clothing">Clothing</option>
+      <option value="Hardware">Hardware</option>
+      <option value="Food">Food</option>
+      <option value="Sports">Sports</option>
+      <option value="Toys">Toys</option>
+    </select>
+    <input type="text" id="pLocation" placeholder="Location" />
+    <div class="btn-row">
+      <button class="btn-primary" onclick="addProduct()">Save Item</button>
+      <button class="btn-light" onclick="toggleModal('addItemModal')">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script src="common.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/inventory.js"></script>
+</body>
+</html>

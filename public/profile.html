@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Profile | InventoryPro</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div id="mainApp">
+  <header>
+    <div class="logo">Inventory<span>Pro</span></div>
+    <nav>
+      <a href="/dashboard.html">Dashboard</a>
+      <a href="/inventory.html">Inventory</a>
+      <a href="/stock.html">Stock Ops</a>
+      <a href="/locations.html">Locations</a>
+      <a href="/reports.html">Reports</a>
+      <a href="/users.html">Users</a>
+      <a href="/profile.html" style="color:#ffd700;">Profile</a>
+      <a href="/logout" style="color:#ff4757">Logout</a>
+    </nav>
+  </header>
+
+  <div class="profile-container">
+    <div class="profile-card">
+      <div class="profile-header">
+        <div class="profile-avatar" id="profileInitials">U</div>
+        <div class="profile-name" id="profDisplayName">—</div>
+        <span class="profile-role-badge" id="profRoleBadge">—</span>
+      </div>
+
+      <div class="profile-body" id="profileBody">
+        <div class="profile-row">
+          <span class="profile-label">Owner Name</span>
+          <span class="profile-value" id="profOwnerName">—</span>
+          <input type="text" id="editOwnerName" class="profile-input" style="display:none;" />
+        </div>
+        <div class="profile-row">
+          <span class="profile-label">Shop Name</span>
+          <span class="profile-value" id="profShopName">—</span>
+          <input type="text" id="editShopName" class="profile-input" style="display:none;" />
+        </div>
+        <div class="profile-row">
+          <span class="profile-label">Email</span>
+          <span class="profile-value" id="profEmail">—</span>
+          <input type="email" id="editEmail" class="profile-input" style="display:none;" />
+        </div>
+        <div class="profile-row">
+          <span class="profile-label">Username</span>
+          <span class="profile-value" id="profUsername">—</span>
+          <input type="text" id="editUsername" class="profile-input" style="display:none;" />
+        </div>
+        <div class="profile-row">
+          <span class="profile-label">User ID</span>
+          <span class="profile-value" id="profUserId">—</span>
+          <input type="text" id="editUserId" class="profile-input" style="display:none;" />
+        </div>
+      </div>
+
+      <div class="profile-footer" style="display:flex; flex-direction:column; align-items:center; padding:15px;">
+        <span>Joined as <span id="profFooterRole">—</span></span>
+        <p style="font-size:11px; margin-top:6px;">Last updated: <span id="profileLastUpdated">-</span></p>
+        <div style="display:flex; gap:10px; margin-top:10px;">
+          <button id="editProfileBtn" class="btn-primary" onclick="toggleEditMode()">Edit Profile</button>
+          <button id="saveProfileBtn" class="btn-dark" style="display:none;" onclick="saveProfile()">Save Changes</button>
+          <button id="cancelEditBtn" class="btn-light" style="display:none;" onclick="toggleEditMode()">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer><p>© 2026 InventoryPro</p></footer>
+</div>
+
+<script src="common.js"></script>
+<script src="js/profile.js"></script>
+</body>
+</html>

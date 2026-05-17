@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inventory | InventoryPro</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div id="mainApp">
+  <header>
+    <div class="logo">Inventory<span>Pro</span></div>
+    <nav>
+      <a href="/dashboard.html">Dashboard</a>
+      <a href="/inventory.html">Inventory</a>
+      <a href="/stock.html">Stock Ops</a>
+      <a href="/locations.html">Locations</a>
+      <a href="/reports.html">Reports</a>
+      <a href="/users.html">Users</a>
+      <a href="/profile.html" style="color:#ffd700;">Profile</a>
+      <a href="/logout" style="color:#ff4757">Logout</a>
+    </nav>
+  </header>
+
+  <section class="section products" id="inventorySection">
+    <div class="panel">
+      <div class="bar-row" style="justify-content: space-between;">
+        <h2>Inventory Management</h2>
+        <div class="bar-row">
+          <input type="text" id="searchBox" placeholder="Search item..." onkeyup="searchProduct()" style="min-width:220px;" />
+          <select id="filterCategory" onchange="renderProducts()">
+            <option value="All">All Categories</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Clothing">Clothing</option>
+            <option value="Hardware">Hardware</option>
+            <option value="Food">Food</option>
+            <option value="Sports">Sports</option>
+            <option value="Toys">Toys</option>
+          </select>
+          <button class="btn-primary" onclick="toggleModal('addItemModal')">Add Item</button>
+        </div>
+      </div>
+      <p class="muted" id="productTitle" style="margin-top:8px;">Select a category or search items.</p>
+      <div id="productList" class="product-list"></div>
+    </div>
+  </section>
+
+  <footer><p>© 2026 InventoryPro</p></footer>
+</div>
+
+<div id="addItemModal" class="modal">
+  <div class="modal-card">
+    <h3>Add New Item</h3>
+    <input type="text" id="pName" placeholder="Item Name" />
+    <input type="text" id="pSku" placeholder="SKU (unique)" />
+    <input type="number" id="pPrice" placeholder="Unit Price" />
+    <input type="number" id="pStock" placeholder="Initial Stock" />
+    <input type="number" id="pReorder" placeholder="Reorder Level" />
+    <input type="file" id="pImgFile" accept="image/*" />
+    <select id="pCategory">
+      <option value="Electronics">Electronics</option>
+      <option value="Clothing">Clothing</option>
+      <option value="Hardware">Hardware</option>
+      <option value="Food">Food</option>
+      <option value="Sports">Sports</option>
+      <option value="Toys">Toys</option>
+    </select>
+    <input type="text" id="pLocation" placeholder="Location" />
+    <div class="btn-row">
+      <button class="btn-primary" onclick="addProduct()">Save Item</button>
+      <button class="btn-light" onclick="toggleModal('addItemModal')">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script src="common.js"></script>
+<script src="js/inventory.js"></script>
+</body>
+</html>

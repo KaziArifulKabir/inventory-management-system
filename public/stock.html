@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stock Operations | InventoryPro</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div id="mainApp">
+  <header>
+    <div class="logo">Inventory<span>Pro</span></div>
+    <nav>
+      <a href="/dashboard.html">Dashboard</a>
+      <a href="/inventory.html">Inventory</a>
+      <a href="/stock.html">Stock Ops</a>
+      <a href="/locations.html">Locations</a>
+      <a href="/reports.html">Reports</a>
+      <a href="/users.html">Users</a>
+      <a href="/profile.html" style="color:#ffd700;">Profile</a>
+      <a href="/logout" style="color:#ff4757">Logout</a>
+    </nav>
+  </header>
+
+  <section class="section stocks" id="stockSection">
+    <div class="panel">
+      <h2>Stock Operations</h2>
+      <div class="grid-3">
+        <div>
+          <h3>Stock In</h3>
+          <input type="text" id="stockInItem" placeholder="Item name" />
+          <input type="number" id="stockInQty" placeholder="Quantity received" />
+          <input type="text" id="stockInLocation" placeholder="Receiving location" />
+          <button class="btn-primary" onclick="stockIn()">Add Stock</button>
+        </div>
+        <div>
+          <h3>Stock Out</h3>
+          <input type="text" id="stockOutItem" placeholder="Item name" />
+          <input type="number" id="stockOutQty" placeholder="Quantity removed" />
+          <input type="text" id="stockOutLocation" placeholder="Source location" />
+          <input type="text" id="stockOutReason" placeholder="Reason (sale/damage/return)" />
+          <button class="btn-danger" onclick="stockOut()">Remove Stock</button>
+        </div>
+        <div>
+          <h3>Stock Transfer</h3>
+          <input type="text" id="transferItem" placeholder="Item name" />
+          <input type="number" id="transferQty" placeholder="Transfer quantity" />
+          <input type="text" id="transferFrom" placeholder="From location" />
+          <input type="text" id="transferTo" placeholder="To location" />
+          <button class="btn-dark" onclick="stockTransfer()">Transfer</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer><p>© 2026 InventoryPro</p></footer>
+</div>
+<script src="common.js"></script>
+<script src="js/stock.js"></script>
+</body>
+</html>

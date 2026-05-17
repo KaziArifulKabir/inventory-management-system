@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Locations | InventoryPro</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div id="mainApp">
+  <header>
+    <div class="logo">Inventory<span>Pro</span></div>
+    <nav>
+      <a href="/dashboard.html">Dashboard</a>
+      <a href="/inventory.html">Inventory</a>
+      <a href="/stock.html">Stock Ops</a>
+      <a href="/locations.html">Locations</a>
+      <a href="/reports.html">Reports</a>
+      <a href="/users.html">Users</a>
+      <a href="/profile.html" style="color:#ffd700;">Profile</a>
+      <a href="/logout" style="color:#ff4757">Logout</a>
+    </nav>
+  </header>
+
+  <section class="section locations" id="locationsSection">
+    <div class="panel">
+      <div class="bar-row" style="justify-content: space-between;">
+        <h2>Location Management</h2>
+        <button class="btn-primary" onclick="toggleModal('addLocationModal')">Add Location</button>
+      </div>
+      <div class="table-wrap" style="margin-top: 16px;">
+        <table>
+          <thead>
+            <tr><th>Name</th><th>Type</th><th>Capacity</th><th>Stock Count</th><th>Manager</th></tr>
+          </thead>
+          <tbody id="locationsTable"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <footer><p>© 2026 InventoryPro</p></footer>
+</div>
+
+<div id="addLocationModal" class="modal">
+  <div class="modal-card">
+    <h3>Add Location</h3>
+    <input type="text" id="locName" placeholder="Location Name" />
+    <select id="locType">
+      <option value="warehouse">Warehouse</option>
+      <option value="store">Store</option>
+      <option value="lab">Lab</option>
+      <option value="library">Library</option>
+      <option value="other">Other</option>
+    </select>
+    <input type="number" id="locCapacity" placeholder="Capacity" />
+    <input type="text" id="locManager" placeholder="Manager Name" />
+    <div class="btn-row">
+      <button class="btn-primary" onclick="addLocation()">Save Location</button>
+      <button class="btn-light" onclick="toggleModal('addLocationModal')">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script src="common.js"></script>
+<script src="js/locations.js"></script>
+</body>
+</html>

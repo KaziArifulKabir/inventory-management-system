@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reports | InventoryPro</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div id="mainApp">
+  <header>
+    <div class="logo">Inventory<span>Pro</span></div>
+    <nav>
+      <a href="/dashboard.html">Dashboard</a>
+      <a href="/inventory.html">Inventory</a>
+      <a href="/stock.html">Stock Ops</a>
+      <a href="/locations.html">Locations</a>
+      <a href="/reports.html">Reports</a>
+      <a href="/users.html">Users</a>
+      <a href="/profile.html" style="color:#ffd700;">Profile</a>
+      <a href="/logout" style="color:#ff4757">Logout</a>
+    </nav>
+  </header>
+
+  <section class="section reports" id="reportsSection">
+    <div class="panel">
+      <h2>Reports</h2>
+      <p class="muted">Stock Report, Transaction History, and Low Stock Alert</p>
+      <div class="grid-3" style="margin-top: 16px;">
+        <div><h3>Stock Report</h3><button class="btn-primary" onclick="exportReport('stock')">Export Stock Report</button></div>
+        <div><h3>Transaction History</h3><button class="btn-dark" onclick="exportReport('transaction')">Export Transactions</button></div>
+        <div><h3>Low Stock</h3><button class="btn-danger" onclick="showLowStock()">Show Low Stock Items</button></div>
+      </div>
+      <canvas id="salesChart" style="margin-top:24px; background:#fff; border-radius:12px;"></canvas>
+    </div>
+  </section>
+
+  <footer><p>© 2026 InventoryPro</p></footer>
+</div>
+
+<!-- Low Stock Modal -->
+<div id="lowStockModal" class="modal">
+  <div class="modal-card" style="max-width:700px;">
+    <h3>Low Stock Items</h3>
+    <div class="table-wrap" style="margin-top:16px;">
+      <table>
+        <thead>
+          <tr><th>Name</th><th>SKU</th><th>Stock</th><th>Reorder Level</th><th>Location</th></tr>
+        </thead>
+        <tbody id="lowStockTableBody"></tbody>
+      </table>
+    </div>
+    <div class="btn-row" style="margin-top:16px;">
+      <button class="btn-light" onclick="toggleModal('lowStockModal')">Close</button>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="common.js"></script>
+<script src="js/reports.js"></script>
+</body>
+</html>
